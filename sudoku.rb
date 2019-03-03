@@ -83,7 +83,7 @@ class Board
   end
   
 
-  def solved
+  def solved?
     # are there any tiles on the board that are not equal to zero?
     if grid.flatten.each.include?(0)
       return false
