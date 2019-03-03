@@ -8,5 +8,5 @@ Open your terminal and enter:
 ```
 ruby sudoku.rb
 ```
-Then, follow the prompts. Have fun! ;)
+Then, follow the prompts. Have fun!
 
