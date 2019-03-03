@@ -12,3 +12,6 @@ ruby sudoku.rb
 ```
 Then, follow the prompts. Have fun!
 
+[![](https://youtu.be/YvqXJ6OEjKM)](https://youtu.be/YvqXJ6OEjKM)
+
+https://youtu.be/YvqXJ6OEjKM

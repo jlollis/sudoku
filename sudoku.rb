@@ -53,7 +53,7 @@ class Board
     # update selection for grid[col][row]
     #puts "#{@grid[2][0]}"
     
-    puts "Please enter the row, column and value for your selection."
+    puts "Please enter the and row, column for your selection."
     print "row: "
     row = gets.chomp.to_i
     print "column: "
@@ -68,10 +68,12 @@ class Board
 
   # render current board state
   def render
+    # puts "\e[H\e[2J"
+
     values = @grid
-    puts "   +---+---+---+---+---+---+---+---+---+".light_black
+    puts "       +---+---+---+---+---+---+---+---+---+".light_black
     values.each do |row|
-      print "   |".light_black
+      print "       |".light_black
       row.each_with_index do |value, idx|
         if idx >= 1
           print "|".light_black
@@ -86,7 +88,7 @@ class Board
         end
       end
       print "|\n".light_black
-      puts "   +---+---+---+---+---+---+---+---+---+".light_black
+      puts "       +---+---+---+---+---+---+---+---+---+".light_black
     end
     puts  # adds newline at end of board
   end
@@ -97,24 +99,25 @@ class Board
     if grid.flatten.each.include?(0)
       return false
     else
-      puts "       You completed the puzzle! Yay!!".light_green
+      puts "          You completed the puzzle! Yay!!".light_green
       puts
-      puts "               ※\\( ﾟᴗﾟ)/※       ".green
+      puts "                  ※\\( ﾟᴗﾟ)/※       ".green
       puts
       return true
     end
   end
 
-  def welcome
+  def splash
     title = %q{
-                     __     __       
-        ___ __ _____/ /__  / /____ __
-       (_-</ // / _  / _ \/  '_/ // /
-      /___/\_,_/\_,_/\___/_/\_\\\_,_/ 
+                         __     __       
+            ___ __ _____/ /__  / /____ __
+           (_-</ // / _  / _ \/  '_/ // /
+          /___/\_,_/\_,_/\___/_/\_\\\_,_/ 
           
 }.light_blue
 
     print title
+
   end
 
 end
@@ -142,15 +145,15 @@ class Game < Board
 
     # loop that runs until puzzle is solved
     b = Board.new
-    
-    # ascii title splash
-    b.welcome 
 
     b.populate_array("sudoku1.txt")
 
     # inside loop:
     # p b
         until b.solved?
+          system "clear"
+          # ascii title splash
+          b.splash 
           # render board
           b.render
           # get position and value from the player, update position and value
