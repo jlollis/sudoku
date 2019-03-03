@@ -14,3 +14,7 @@ Then, follow the prompts. Have fun!
 
 
 [![clip](http://img.youtube.com/vi/YvqXJ6OEjKM/0.jpg)](http://www.youtube.com/watch?v=YvqXJ6OEjKM "Video Title")
+
+https://youtu.be/YvqXJ6OEjKM
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iG9CE55wbtY?rel=0;&autoplay=1&mute=1" frameborder="0" allowfullscreen include></iframe>
