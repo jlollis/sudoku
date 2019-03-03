@@ -16,7 +16,6 @@
 # Then, follow the prompts. Have fun! ;)
 
 require 'colorize'
-require 'terminal-table'
 
 class Board 
   attr_accessor :grid
@@ -69,23 +68,17 @@ class Board
   def render
     values = @grid
 
-    # table = Terminal::Table.new :headings => [' ', 1, 2, 3, 4, 5, 6, 7, 8, 9 ], :rows => rows
-    table = Terminal::Table.new do |t|
-  
-      t << [' ', 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-      t << :separator
-      
-      values.each do |row|
+    values.each do |row|
 
-        row.each do |cell|
-          if "#{cell}".match?(/[0]/)
-            print " #{cell} ".light_black
-          else
-            print " #{cell} ".blue
-          end
+      row.each do |cell|
+        if "#{cell}".match?(/[0]/)
+          print " #{cell} ".black
+        else
+          print " #{cell} ".blue
         end
-        puts  # adds newline at end of row
       end
+      puts  # adds newline at end of row
+    end
     puts  # adds newline at end of board
   end
   
