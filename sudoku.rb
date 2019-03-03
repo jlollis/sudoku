@@ -1,10 +1,13 @@
 # sudoku.rb - by Julie Lollis 
 
 # Description: Loads a text file containing a sudoku puzzle and allows user to solve
-# the puzzle by entering a value for each row and column.
+# the puzzle by entering a value for each row and column. 
 
-# At this stage, it just records the entry, and prints the board with the updated values until
-# there are no remaining squares on the board. Does not check if the entry is the correct value.
+# The values entered by the player are printed in yellow to distinguish it from the starting values.
+
+# At this stage, the program just stores the values entered, and prints the board with the updated values until
+# there are no remaining squares on the board. It does not check if the entry is the correct value. 
+
 # In that sense, it is the digital equivalent to the puzzle book you might purchase in the supermarket checkout. 
 # (but with less puzzles, lol) You can add additional text files, there is a lot of room for expansion on this one.
 
@@ -94,7 +97,10 @@ class Board
     if grid.flatten.each.include?(0)
       return false
     else
-      puts "You solved the puzzle! :)"
+      puts "       You completed the puzzle! Yay!!".light_green
+      puts
+      puts "               ※\\( ﾟᴗﾟ)/※       ".green
+      puts
       return true
     end
   end
