@@ -12,6 +12,7 @@ ruby sudoku.rb
 ```
 Then, follow the prompts. Have fun!
 
-[![](https://youtu.be/YvqXJ6OEjKM)](https://youtu.be/YvqXJ6OEjKM)
+
+[![clip](http://img.youtube.com/vi/YvqXJ6OEjKM/0.jpg)](http://www.youtube.com/watch?v=YvqXJ6OEjKM "Video Title")
 
 https://youtu.be/YvqXJ6OEjKM
