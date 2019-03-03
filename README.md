@@ -1,10 +1,12 @@
 # sudoku
 
-A sudoku game you can play in the terminal.
+A simple sudoku game you can play in the terminal.
 
 ### How to Play
 
-Open your terminal and enter:
+Download the folder from github.
+
+Open your terminal, navigate to your folder and enter:
 ```
 ruby sudoku.rb
 ```
