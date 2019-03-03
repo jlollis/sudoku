@@ -67,17 +67,19 @@ class Board
   # render current board state
   def render
     values = @grid
-
+    puts "+---+---+---+---+---+---+---+---+---+"
     values.each do |row|
 
       row.each do |cell|
-        if "#{cell}".match?(/[0]/)
+        print "|"
+        if " #{cell} ".match?(/[0]/)
           print " #{cell} ".black
         else
           print " #{cell} ".blue
         end
       end
-      puts  # adds newline at end of row
+      print "|\n"
+      puts "+---+---+---+---+---+---+---+---+---+" # adds newline at end of row
     end
     puts  # adds newline at end of board
   end
@@ -95,11 +97,11 @@ class Board
 
   def welcome
     title = %q{
-               __     __       
-  ___ __ _____/ /__  / /____ __
- (_-</ // / _  / _ \/  '_/ // /
-/___/\_,_/\_,_/\___/_/\_\\\_,_/ 
-         
+                 __     __       
+    ___ __ _____/ /__  / /____ __
+   (_-</ // / _  / _ \/  '_/ // /
+  /___/\_,_/\_,_/\___/_/\_\\\_,_/ 
+          
 
 }.light_blue
 
