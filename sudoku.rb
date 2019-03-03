@@ -59,27 +59,31 @@ class Board
     val = gets.chomp.to_s
     puts
 
-    @grid[row-1][col-1] = val
-    #return "#{@grid[col][row]}"
-    
+    @grid[row][col] = val
+
   end
 
   # render current board state
   def render
     values = @grid
-    puts "+---+---+---+---+---+---+---+---+---+"
+    puts "   +---+---+---+---+---+---+---+---+---+".light_black
     values.each do |row|
-
-      row.each do |cell|
-        print "|"
-        if " #{cell} ".match?(/[0]/)
-          print " #{cell} ".black
+      print "   |".light_black
+      row.each_with_index do |value, idx|
+        if idx >= 1
+          print "|".light_black
+        end
+        # color coding output to cells
+        if " #{value} ".match?(/[0]/)  # print open spaces in black
+          print " #{value} ".black   
+        elsif value.is_a? String   # print values changed by player in light blue
+          print " #{value} ".light_yellow
         else
-          print " #{cell} ".blue
+          print " #{value} ".light_blue  # OG values are printed in yellow
         end
       end
-      print "|\n"
-      puts "+---+---+---+---+---+---+---+---+---+" # adds newline at end of row
+      print "|\n".light_black
+      puts "   +---+---+---+---+---+---+---+---+---+".light_black
     end
     puts  # adds newline at end of board
   end
@@ -97,12 +101,11 @@ class Board
 
   def welcome
     title = %q{
-                 __     __       
-    ___ __ _____/ /__  / /____ __
-   (_-</ // / _  / _ \/  '_/ // /
-  /___/\_,_/\_,_/\___/_/\_\\\_,_/ 
+                     __     __       
+        ___ __ _____/ /__  / /____ __
+       (_-</ // / _  / _ \/  '_/ // /
+      /___/\_,_/\_,_/\___/_/\_\\\_,_/ 
           
-
 }.light_blue
 
     print title
@@ -122,13 +125,6 @@ class Tile < Board
     @values
   end 
 
-  def self.to_s
-    # if tile is equal to zero, then it is not given
-    # also color color code starting values (givens) and the correct guesses
-
-  end
-
-
 end
 
 class Game < Board
@@ -147,11 +143,13 @@ class Game < Board
     b.populate_array("sudoku1.txt")
 
     # inside loop:
+    # p b
         until b.solved?
           # render board
           b.render
           # get position and value from the player, update position and value
           b.update_position
+          # p b
         end
 
   end
