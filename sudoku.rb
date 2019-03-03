@@ -72,7 +72,7 @@ class Board
 
       row.each do |cell|
         if "#{cell}".match?(/[0]/)
-          print " #{cell} ".black
+          print " #{cell} ".light_black
         else
           print " #{cell} ".blue
         end
