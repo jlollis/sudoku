@@ -149,8 +149,8 @@ class Game < Board
     b.populate_array("sudoku1.txt")
 
     # inside loop:
-    # p b
         until b.solved?
+          # clear screen
           system "clear"
           # ascii title splash
           b.splash 
@@ -158,7 +158,6 @@ class Game < Board
           b.render
           # get position and value from the player, update position and value
           b.update_position
-          # p b
         end
 
   end
