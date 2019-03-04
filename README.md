@@ -20,6 +20,3 @@ The object of the game is to fill in each open square so that each of the digits
 <br />
 
 ![](sudoku.gif)
-
-
-![](sudoku-2.gif)

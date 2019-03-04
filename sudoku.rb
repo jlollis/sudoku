@@ -79,12 +79,12 @@ class Board
           print "|".light_black
         end
         # color coding output to cells
-        if " #{value} ".match?(/[0]/)  # print open spaces in black
+        if " #{value} ".match?(/[0]/)  # open spaces are printed in black
           print " #{value} ".black   
-        elsif value.is_a? String   # print values changed by player in light blue
+        elsif value.is_a? String   # values changed by player are printed in yellow
           print " #{value} ".light_yellow
         else
-          print " #{value} ".light_blue  # OG values are printed in yellow
+          print " #{value} ".light_blue  # OG values are printed in blue
         end
       end
       print "|\n".light_black
