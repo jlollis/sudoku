@@ -71,9 +71,10 @@ class Board
     # puts "\e[H\e[2J"
 
     values = @grid
+    puts "         0   1   2   3   4   5   6   7   8".light_black
     puts "       +---+---+---+---+---+---+---+---+---+".light_black
-    values.each do |row|
-      print "       |".light_black
+    values.each_with_index do |row, idx|
+      print "     #{idx} |".light_black
       row.each_with_index do |value, idx|
         if idx >= 1
           print "|".light_black
@@ -81,8 +82,8 @@ class Board
         # color coding output to cells
         if " #{value} ".match?(/[0]/)  # no values printed for open spaces
           print "   "
-        elsif value.is_a? String   # values changed by player are printed in yellow
-          print " #{value} ".light_yellow
+        elsif value.is_a? String   # values changed by player are printed in green
+          print " #{value} ".green
         else
           print " #{value} ".light_blue  # OG values are printed in blue
         end
