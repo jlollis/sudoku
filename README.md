@@ -15,8 +15,10 @@ The object of the game is to fill in each open square so that each of the digits
   ```
 3. Type in the row, column and value for the square you would like to fill in.
 
-4. Continue to fill in squares until no empty squares remain, and each number from 1-9 occurs once in each row and column.
+4. Continue to fill in squares until no empty squares remain.
 
+
+Have fun! :)
 
 
 
