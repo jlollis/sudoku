@@ -53,7 +53,7 @@ class Board
     # update selection for grid[col][row]
     #puts "#{@grid[2][0]}"
     
-    puts "Please enter the and row, column for your selection."
+    puts "Enter the row, column and value for your selection."
     print "row: "
     row = gets.chomp.to_i
     print "column: "
@@ -79,8 +79,8 @@ class Board
           print "|".light_black
         end
         # color coding output to cells
-        if " #{value} ".match?(/[0]/)  # open spaces are printed in black
-          print " #{value} ".black   
+        if " #{value} ".match?(/[0]/)  # no values printed for open spaces
+          print "   "
         elsif value.is_a? String   # values changed by player are printed in yellow
           print " #{value} ".light_yellow
         else
