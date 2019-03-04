@@ -1,16 +1,23 @@
 # sudoku
 
-A simple sudoku game you can play in the terminal.
+A sudoku game you can play in the terminal.
+
+The object of the game is to fill in each open square so that each of the digits 
+1-9 occurs once in each row and column.
 
 ### How to Play
 
-Download the folder from github.
+1. Download the folder from github and extract the folder.
 
-Open your terminal, navigate to your folder and enter:
-```
-ruby sudoku.rb
-```
-Then, follow the prompts. Have fun!
+2. Open your terminal, navigate to the sudoku folder, then enter:
+  ```
+  ruby sudoku.rb
+  ```
+3. Type in the row, column and value for the square you would like to fill in.
+
+4. Continue to fill in squares until no empty squares remain, and each number from 1-9 occurs once in each row and column.
+
+
 
 
 
