@@ -82,8 +82,8 @@ class Board
         # color coding output to cells
         if " #{value} ".match?(/[0]/)  # no values printed for open spaces
           print "   "
-        elsif value.is_a? String   # values changed by player are printed in green
-          print " #{value} ".green
+        elsif value.is_a? String   # values changed by player are printed in yellow
+          print " #{value} ".yellow
         else
           print " #{value} ".light_blue  # OG values are printed in blue
         end
